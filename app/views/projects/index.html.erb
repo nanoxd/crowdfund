@@ -3,6 +3,12 @@
 <h3>Current Projects:</h3>
 <ul>
   <% @current_projects.each do |pro| %>
-    <li><%= pro %></li>
+    <li>
+      <%= pro.name %>
+      <ul>
+        <li>Description: <%= pro.description %></li>
+        <li>Target pledge: <%= number_to_currency(pro.target_pledge_amount) %></li>
+      </ul>
+    </li>
   <% end %>
 </ul>
