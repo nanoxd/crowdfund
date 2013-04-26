@@ -1,4 +1,4 @@
-<h1>Projects</h1>
+<h1><%= pluralize(@current_projects.size, 'Project') %></h1>
 
 <h2>Current Projects:</h2>
 
@@ -9,7 +9,7 @@
       <h3><%= pro.name %></h3>
     </header>
     <p>
-      <%= pro.description %>
+      <%= truncate(pro.description, limit: 150, seperator: ' ') %>
     </p>
     <table>
       <tr>
@@ -18,7 +18,7 @@
       </tr>
       <tr>
         <th>Pledging Ends:</th>
-        <td><%= pro.pledging_ends_on %></td>
+        <td><%= format_pledging_ends_on(pro) %></td>
       </tr>
       <tr>
         <th>Website:</th>
