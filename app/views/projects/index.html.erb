@@ -6,7 +6,7 @@
 <% @current_projects.each do |pro| %>
   <article>
     <header>
-      <h3><%= pro.name %></h3>
+      <h3><%= link_to(pro.name, pro) %></h3>
     </header>
     <p>
       <%= truncate(pro.description, limit: 150, seperator: ' ') %>
